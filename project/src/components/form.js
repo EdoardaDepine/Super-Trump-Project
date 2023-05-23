@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import Input from "./input";
 import TextArea from "./textArea";
 import Select from "./select";
@@ -21,6 +21,7 @@ class Form extends React.Component {
       onInputChange,
       onSaveButtonClick,
     } = this.props;
+
     return (
       <form className='form'>
         <Input
@@ -30,9 +31,9 @@ class Form extends React.Component {
           id='nameInput'
           name='nameInput'
           value={cardName}
-          onChange={onInputChange}
+          onInputChange={onInputChange}
         />
-        <TextArea value={cardDescription} />
+        <TextArea value={cardDescription} onInputChange={onInputChange} />
         <Input
           className='attr1Input'
           labelName='Attr01'
@@ -40,7 +41,7 @@ class Form extends React.Component {
           id='attr1Input'
           name='attr1Input'
           value={cardAttr1}
-          onChange={onInputChange}
+          onInputChange={onInputChange}
         />
         <Input
           className='attr2Input'
@@ -49,7 +50,7 @@ class Form extends React.Component {
           id='attr2Input'
           name='attr2Input'
           value={cardAttr2}
-          onChange={onInputChange}
+          onInputChange={onInputChange}
         />
         <Input
           className='attr3Input'
@@ -58,7 +59,7 @@ class Form extends React.Component {
           id='attr3Input'
           name='attr3Input'
           value={cardAttr3}
-          onChange={onInputChange}
+          onInputChange={onInputChange}
         />
         <Input
           className='imageInput'
@@ -67,29 +68,32 @@ class Form extends React.Component {
           id='imageInput'
           name='imageInput'
           value={cardImage}
-          onChange={onInputChange}
+          onInputChange={onInputChange}
         />
-        <CheckBox checked={cardTrunfo} onChange={onInputChange} />
-        <Select value={cardRare} onChange={onInputChange} />
-        <Button disabled={inSaveButtonDisabled} onClick={onSaveButtonClick} />
+        <CheckBox checked={cardTrunfo} onInputChange={onInputChange} />
+        <Select value={cardRare} onInputChange={onInputChange} />
+        <Button
+          disabled={inSaveButtonDisabled}
+          onSaveButtonClick={onSaveButtonClick}
+        />
       </form>
     );
   }
 }
 
-Form.propTypes = {
-  cardName: PropTypes.string.isRequired,
-  cardDescription: PropTypes.string.isRequired,
-  cardAttr1: PropTypes.string.isRequired,
-  cardAttr2: PropTypes.string.isRequired,
-  cardAttr3: PropTypes.string.isRequired,
-  cardImage: PropTypes.string.isRequired,
-  cardRare: PropTypes.string.isRequired,
-  cardTrunfo: PropTypes.bool.isRequired,
-  hasTrunfo: PropTypes.bool.isRequired,
-  isSaveButtonDisabled: PropTypes.bool.isRequired,
-  onInputChange: PropTypes.func.isRequired,
-  onSaveButtonClick: PropTypes.func.isRequired,
-};
+// Form.propTypes = {
+//   cardName: PropTypes.string.isRequired,
+//   cardDescription: PropTypes.string.isRequired,
+//   cardAttr1: PropTypes.string.isRequired,
+//   cardAttr2: PropTypes.string.isRequired,
+//   cardAttr3: PropTypes.string.isRequired,
+//   cardImage: PropTypes.string.isRequired,
+//   cardRare: PropTypes.string.isRequired,
+//   cardTrunfo: PropTypes.bool.isRequired,
+//   hasTrunfo: PropTypes.bool.isRequired,
+//   isSaveButtonDisabled: PropTypes.bool.isRequired,
+//   onInputChange: PropTypes.func.isRequired,
+//   onSaveButtonClick: PropTypes.func.isRequired,
+// };
 
 export default Form;

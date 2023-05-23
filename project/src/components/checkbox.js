@@ -2,7 +2,7 @@ import React from "react";
 
 class CheckBox extends React.Component {
   render() {
-    const { checked } = this.props;
+    const { checked, onInputChange } = this.props;
     return (
       <label className='trunfoInput'>
         Super Trunfo
@@ -11,6 +11,7 @@ class CheckBox extends React.Component {
           id='trunfoInput'
           name='trunfoInput'
           checked={checked}
+          onChange={onInputChange}
         ></input>
       </label>
     );
