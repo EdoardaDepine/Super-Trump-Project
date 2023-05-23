@@ -2,11 +2,11 @@ import React from "react";
 
 class Input extends React.Component {
   render() {
-    const { labelName, type, id, name } = this.props;
+    const { className, labelName, type, id, name, value } = this.props;
     return (
-      <label>
+      <label className={className}>
         {labelName}
-        <input type={type} id={id} name={name}></input>
+        <input type={type} id={id} name={name} value={value}></input>
       </label>
     );
   }

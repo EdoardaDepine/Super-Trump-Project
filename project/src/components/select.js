@@ -2,13 +2,14 @@ import React from "react";
 
 class Select extends React.Component {
   render() {
+    const { value } = this.props;
     return (
-      <label>
+      <label className='rareInput'>
         Raridade
-        <select className='rareInput'>
-          <option value='normal'>Normal</option>
-          <option value='rare'>Raro</option>
-          <option value='suchRare'>Muito raro</option>
+        <select value={value}>
+          <option>Normal</option>
+          <option>Raro</option>
+          <option>Muito raro</option>
         </select>
       </label>
     );

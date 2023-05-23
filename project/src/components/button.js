@@ -2,7 +2,12 @@ import React from "react";
 
 class Button extends React.Component {
   render() {
-    return <button className='saveButton'>Salvar</button>;
+    const {disabled} = this.props;
+    return (
+      <button className='saveButton' disabled={disabled}>
+        Salvar
+      </button>
+    );
   }
 }
 
