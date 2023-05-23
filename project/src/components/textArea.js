@@ -6,7 +6,11 @@ class TextArea extends React.Component {
     return (
       <label className='descriptionInput'>
         Descrição
-        <textarea value={value} onChange={onInputChange}></textarea>
+        <textarea
+          value={value}
+          onChange={onInputChange}
+          name='cardDescription'
+        ></textarea>
       </label>
     );
   }

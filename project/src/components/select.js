@@ -7,9 +7,9 @@ class Select extends React.Component {
       <label className='rareInput'>
         Raridade
         <select value={value} onChange={onInputChange}>
-          <option>Normal</option>
-          <option>Raro</option>
-          <option>Muito raro</option>
+          <option value='normal'>Normal</option>
+          <option value='rare'>Raro</option>
+          <option value='suchRare'>Muito raro</option>
         </select>
       </label>
     );

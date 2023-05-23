@@ -14,7 +14,7 @@ class Card extends React.Component {
     } = this.props;
     return (
       <div className='card'>
-        <p className='nameCard' name='nameCard'>
+        <p className='nameCard' name='cardName'>
           {cardName}
         </p>
         <img
@@ -23,22 +23,22 @@ class Card extends React.Component {
           src={cardImage}
           alt={cardName}
         ></img>
-        <p className='descriptionCard' name='descriptionCard'>
+        <p className='descriptionCard' name='cardDescription'>
           {cardDescription}
         </p>
-        <p className='attr1Card' name='attr1Card'>
+        <p className='attr1Card' name='cardAttr1'>
           {cardAttr1}
         </p>
-        <p className='attr2Card' name='attr2Card'>
+        <p className='attr2Card' name='cardAttr2'>
           {cardAttr2}
         </p>
-        <p className='attr3Card' name='attr3Card'>
+        <p className='attr3Card' name='cardAttr3'>
           {cardAttr3}
         </p>
-        <p className='rareCard' name='rareCard'>
+        <p className='rareCard' name='cardRare'>
           {cardRare}
         </p>
-        <p className='trunfoCard' name='trunfoCard'>
+        <p className='trunfoCard' name='cardTrunfo'>
           {cardTrunfo}
         </p>
       </div>

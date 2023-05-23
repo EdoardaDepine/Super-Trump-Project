@@ -9,7 +9,7 @@ class CheckBox extends React.Component {
         <input
           type='checkbox'
           id='trunfoInput'
-          name='trunfoInput'
+          name='cardRare'
           checked={checked}
           onChange={onInputChange}
         ></input>

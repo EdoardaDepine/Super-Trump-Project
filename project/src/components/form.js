@@ -29,7 +29,7 @@ class Form extends React.Component {
           labelName='Nome'
           type='text'
           id='nameInput'
-          name='nameInput'
+          name='cardName'
           value={cardName}
           onInputChange={onInputChange}
         />
@@ -39,7 +39,7 @@ class Form extends React.Component {
           labelName='Attr01'
           type='number'
           id='attr1Input'
-          name='attr1Input'
+          name='cardAttr1'
           value={cardAttr1}
           onInputChange={onInputChange}
         />
@@ -48,7 +48,7 @@ class Form extends React.Component {
           labelName='Attr02'
           type='number'
           id='attr2Input'
-          name='attr2Input'
+          name='cardAttr2'
           value={cardAttr2}
           onInputChange={onInputChange}
         />
@@ -57,7 +57,7 @@ class Form extends React.Component {
           labelName='Attr03'
           type='number'
           id='attr3Input'
-          name='attr3Input'
+          name='cardAttr3'
           value={cardAttr3}
           onInputChange={onInputChange}
         />
@@ -66,7 +66,7 @@ class Form extends React.Component {
           labelName='Imagem'
           type='text'
           id='imageInput'
-          name='imageInput'
+          name='cardImage'
           value={cardImage}
           onInputChange={onInputChange}
         />
