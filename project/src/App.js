@@ -15,6 +15,7 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     inSaveButtonDisabled: true,
+    savedCarts: [],
   };
 
   verifyInputs = () => {
@@ -59,6 +60,22 @@ class App extends React.Component {
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
+    const obj = {
+      cardName: this.state.cardName,
+      cardDescription: this.state.cardDescription,
+      cardImage: this.state.cardImage,
+      cardAttr1: this.state.cardAttr1,
+      cardAttr2: this.state.cardAttr2,
+      cardAttr3: this.state.cardAttr3,
+      cardImage: this.state.cardImage,
+      cardRare: this.state.cardRare,
+      cardTrunfo: this.state.cardTrunfo,
+    };
+
+    this.setState({
+      savedCarts: [...this.state.savedCarts, obj],
+    });
+
     console.log("fui clicado");
   };
 
