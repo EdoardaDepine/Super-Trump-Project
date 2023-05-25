@@ -4,56 +4,63 @@ import Form from "./components/form";
 import Card from "./components/card";
 
 class App extends React.Component {
-  constructor() {
-    super();
+  state = {
+    cardName: "",
+    cardDescription: "",
+    cardAttr1: "0",
+    cardAttr2: "0",
+    cardAttr3: "0",
+    cardImage: "",
+    cardRare: "",
+    cardTrunfo: false,
+    hasTrunfo: false,
+    inSaveButtonDisabled: true,
+  };
 
-    this.onInputChange = this.onInputChange.bind(this);
-    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    this.verifyInputs = this.verifyInputs.bind(this);
-    //this.verifyButton = this.verifyButton.bind(this);
-
-    this.state = {
-      cardName: "",
-      cardDescription: "",
-      cardAttr1: "",
-      cardAttr2: "",
-      cardAttr3: "",
-      cardImage: "",
-      cardRare: "",
-      cardTrunfo: false,
-      hasTrunfo: false,
-      inSaveButtonDisabled: true,
-    };
-  }
-
-  verifyInputs() {
+  verifyInputs = () => {
     if (
       this.state.cardName !== "" &&
       this.state.cardDescription !== "" &&
-      this.state.cardImage !== ""
+      this.state.cardImage !== "" &&
+      this.verifyAttributes()
     ) {
-      return this.setState((pv) => ({ ...pv, inSaveButtonDisabled: false }));
+      return this.setState({ inSaveButtonDisabled: false });
     }
-  }
+    return this.setState({ inSaveButtonDisabled: true });
+  };
 
-  onInputChange({ target }) {
+  verifyAttributes = () => {
+    const { cardAttr1, cardAttr2, cardAttr3 } = this.state;
+    const attr1 = Number(cardAttr1) ?? 0;
+    const attr2 = Number(cardAttr2) ?? 0;
+    const attr3 = Number(cardAttr3) ?? 0;
+    const sum = attr1 + attr2 + attr3;
+
+    if (typeof sum !== "number") return false;
+    if (sum > 210) return false;
+    if (attr1 > 90 && attr1 < 0) return false;
+    if (attr2 > 90 && attr2 < 0) return false;
+    if (attr3 > 90 && attr3 < 0) return false;
+
+    return true;
+  };
+
+  onInputChange = ({ target }) => {
     const { name } = target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    this.verifyInputs();
 
-    this.setState({
-      [name]: value,
-    });
-  }
+    this.setState(
+      {
+        [name]: value,
+      },
+      () => this.verifyInputs()
+    );
+  };
 
-  onSaveButtonClick(event) {
+  onSaveButtonClick = (event) => {
     event.preventDefault();
     console.log("fui clicado");
-  }
-
-  // verifyButton() {
-  //     return this.state.inSaveButtonDisabled === false
-  // }
+  };
 
   render() {
     return (
