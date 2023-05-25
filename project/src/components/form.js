@@ -20,6 +20,7 @@ class Form extends React.Component {
       inSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
+      savedCarts,
     } = this.props;
 
     return (
@@ -73,7 +74,22 @@ class Form extends React.Component {
           value={cardImage}
           onInputChange={onInputChange}
         />
-        <CheckBox checked={cardTrunfo} onInputChange={onInputChange} />
+        <div className='checkbox'>
+          {savedCarts.length > 0 ? (
+            savedCarts.map((obj) => {
+              if (obj.cardTrunfo) {
+                return (
+                  <p>Você já possui uma carta Super Trunfo em seu baralho!</p>
+                );
+              }
+              return (
+                <CheckBox checked={cardTrunfo} onInputChange={onInputChange} />
+              );
+            })
+          ) : (
+            <CheckBox checked={cardTrunfo} onInputChange={onInputChange} />
+          )}
+        </div>
         <Select value={cardRare} onInputChange={onInputChange} />
         <Button
           disabled={inSaveButtonDisabled}

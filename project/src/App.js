@@ -7,9 +7,9 @@ class App extends React.Component {
   state = {
     cardName: "",
     cardDescription: "",
-    cardAttr1: "0",
-    cardAttr2: "0",
-    cardAttr3: "0",
+    cardAttr1: "",
+    cardAttr2: "",
+    cardAttr3: "",
     cardImage: "",
     cardRare: "",
     cardTrunfo: false,
@@ -22,8 +22,8 @@ class App extends React.Component {
     if (
       this.state.cardName !== "" &&
       this.state.cardDescription !== "" &&
-      this.state.cardImage !== "" &&
-      this.verifyAttributes()
+      this.state.cardImage !== ""
+      //this.verifyAttributes() === false
     ) {
       return this.setState({ inSaveButtonDisabled: false });
     }
@@ -38,7 +38,7 @@ class App extends React.Component {
     const sum = attr1 + attr2 + attr3;
 
     if (typeof sum !== "number") return false;
-    if (sum > 210) return false;
+    if (sum > 210 && sum < 0) return false;
     if (attr1 > 90 && attr1 < 0) return false;
     if (attr2 > 90 && attr2 < 0) return false;
     if (attr3 > 90 && attr3 < 0) return false;
@@ -75,14 +75,13 @@ class App extends React.Component {
       savedCarts: [...this.state.savedCarts, obj],
       cardName: "",
       cardDescription: "",
-      cardAttr1: "0",
-      cardAttr2: "0",
-      cardAttr3: "0",
+      cardAttr1: "",
+      cardAttr2: "",
+      cardAttr3: "",
       cardImage: "",
       cardRare: "",
       cardTrunfo: false,
     });
-    console.log("fui clicado");
   };
 
   render() {
@@ -102,6 +101,7 @@ class App extends React.Component {
             cardImage={this.state.cardImage}
             cardRare={this.state.cardRare}
             cardTrunfo={this.state.cardTrunfo}
+            savedCarts={this.state.savedCarts}
           />
           <Card
             cardName={this.state.cardName}
