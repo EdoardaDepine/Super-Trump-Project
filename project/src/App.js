@@ -71,11 +71,17 @@ class App extends React.Component {
       cardRare: this.state.cardRare,
       cardTrunfo: this.state.cardTrunfo,
     };
-
     this.setState({
       savedCarts: [...this.state.savedCarts, obj],
+      cardName: "",
+      cardDescription: "",
+      cardAttr1: "0",
+      cardAttr2: "0",
+      cardAttr3: "0",
+      cardImage: "",
+      cardRare: "",
+      cardTrunfo: false,
     });
-
     console.log("fui clicado");
   };
 
