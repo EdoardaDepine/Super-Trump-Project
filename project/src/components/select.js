@@ -6,10 +6,10 @@ class Select extends React.Component {
     return (
       <label className='rareInput'>
         Raridade
-        <select value={value} onChange={onInputChange}>
-          <option value='normal'>Normal</option>
-          <option value='rare'>Raro</option>
-          <option value='suchRare'>Muito raro</option>
+        <select value={value} onChange={onInputChange} name='cardRare'>
+          <option>Normal</option>
+          <option>Raro</option>
+          <option>Muito raro</option>
         </select>
       </label>
     );

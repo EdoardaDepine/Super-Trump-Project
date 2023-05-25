@@ -9,6 +9,8 @@ class App extends React.Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    // this.verifyInputs = this.verifyInputs.bind(this);
+    //this.verifyButton = this.verifyButton.bind(this);
 
     this.state = {
       cardName: "",
@@ -19,6 +21,8 @@ class App extends React.Component {
       cardImage: "",
       cardRare: "",
       cardTrunfo: false,
+      hasTrunfo: false,
+      inSaveButtonDisabled: false,
     };
   }
 
@@ -36,6 +40,20 @@ class App extends React.Component {
     console.log("fui clicado");
   }
 
+  // verifyInputs() {
+  //   if (
+  //     this.state.cardName === "1" ||
+  //     this.state.cardDescription === "1" ||
+  //     this.state.cardImage === "1"
+  //   ) {
+  //     return this.setState(this.inSaveButtonDisabled === true);
+  //   }
+  // }
+
+  // verifyButton() {
+  //     return this.state.inSaveButtonDisabled === false
+  // }
+
   render() {
     return (
       <div>
@@ -44,7 +62,7 @@ class App extends React.Component {
           <Form
             onInputChange={this.onInputChange}
             onSaveButtonClick={this.onSaveButtonClick}
-            inSaveButtonDisabled={false}
+            inSaveButtonDisabled={this.state.inSaveButtonDisabled}
             cardName={this.state.cardName}
             cardDescription={this.state.cardDescription}
             cardAttr1={this.state.cardAttr1}

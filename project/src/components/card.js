@@ -38,9 +38,11 @@ class Card extends React.Component {
         <p className='rareCard' name='cardRare'>
           {cardRare}
         </p>
-        <p className='trunfoCard' name='cardTrunfo'>
-          {cardTrunfo}
-        </p>
+        {cardTrunfo && (
+          <p className='trunfoCard' name='cardTrunfo'>
+            Super Trunfo
+          </p>
+        )}
       </div>
     );
   }

@@ -23,7 +23,10 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <form className='form'>
+      <form
+        className='form'
+        style={{ display: "flex", flexDirection: "column", gap: 20 }}
+      >
         <Input
           className='nameInput'
           labelName='Nome'
