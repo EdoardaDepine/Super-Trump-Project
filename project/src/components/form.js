@@ -76,8 +76,8 @@ class Form extends React.Component {
         />
         <div className='checkbox'>
           {savedCarts.length > 0 ? (
-            savedCarts.map((obj) => {
-              if (obj.cardTrunfo) {
+            savedCarts.forEach((obj) => {
+              if (obj.cardTrunfo === true) {
                 return (
                   <p>Você já possui uma carta Super Trunfo em seu baralho!</p>
                 );
@@ -94,6 +94,7 @@ class Form extends React.Component {
         <Button
           disabled={inSaveButtonDisabled}
           onSaveButtonClick={onSaveButtonClick}
+          name='Salvar'
         />
       </form>
     );

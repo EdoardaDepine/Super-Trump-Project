@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Form from "./components/form";
 import Card from "./components/card";
+import Button from "./components/button";
 
 class App extends React.Component {
   state = {
@@ -67,7 +68,6 @@ class App extends React.Component {
       cardAttr1: this.state.cardAttr1,
       cardAttr2: this.state.cardAttr2,
       cardAttr3: this.state.cardAttr3,
-      cardImage: this.state.cardImage,
       cardRare: this.state.cardRare,
       cardTrunfo: this.state.cardTrunfo,
     };
@@ -83,6 +83,11 @@ class App extends React.Component {
       cardTrunfo: false,
     });
   };
+
+  onDeleteCard(event) {
+    event.preventDefault();
+    event.target.parentNode.remove();
+  }
 
   render() {
     return (
@@ -113,6 +118,24 @@ class App extends React.Component {
             cardRare={this.state.cardRare}
             cardTrunfo={this.state.cardTrunfo}
           />
+          <div className='allCards' style={{ display: "flex" }}>
+            {this.state.savedCarts.map((obj, i) => (
+              <div className='card'>
+                <Card
+                  key={`${i}${obj.cardName}`}
+                  cardName={obj.cardName}
+                  cardDescription={obj.cardDescription}
+                  cardAttr1={obj.cardAttr1}
+                  cardAttr2={obj.cardAttr2}
+                  cardAttr3={obj.cardAttr3}
+                  cardImage={obj.cardImage}
+                  cardRare={obj.cardRare}
+                  cardTrunfo={obj.cardTrunfo}
+                />
+                <Button name='Excluir' onSaveButtonClick={this.onDeleteCard} />
+              </div>
+            ))}
+          </div>
         </main>
       </div>
     );
