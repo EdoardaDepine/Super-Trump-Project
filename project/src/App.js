@@ -9,7 +9,7 @@ class App extends React.Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
-    // this.verifyInputs = this.verifyInputs.bind(this);
+    this.verifyInputs = this.verifyInputs.bind(this);
     //this.verifyButton = this.verifyButton.bind(this);
 
     this.state = {
@@ -22,13 +22,24 @@ class App extends React.Component {
       cardRare: "",
       cardTrunfo: false,
       hasTrunfo: false,
-      inSaveButtonDisabled: false,
+      inSaveButtonDisabled: true,
     };
+  }
+
+  verifyInputs() {
+    if (
+      this.state.cardName !== "" &&
+      this.state.cardDescription !== "" &&
+      this.state.cardImage !== ""
+    ) {
+      return this.setState((pv) => ({ ...pv, inSaveButtonDisabled: false }));
+    }
   }
 
   onInputChange({ target }) {
     const { name } = target;
     const value = target.type === "checkbox" ? target.checked : target.value;
+    this.verifyInputs();
 
     this.setState({
       [name]: value,
@@ -39,16 +50,6 @@ class App extends React.Component {
     event.preventDefault();
     console.log("fui clicado");
   }
-
-  // verifyInputs() {
-  //   if (
-  //     this.state.cardName === "1" ||
-  //     this.state.cardDescription === "1" ||
-  //     this.state.cardImage === "1"
-  //   ) {
-  //     return this.setState(this.inSaveButtonDisabled === true);
-  //   }
-  // }
 
   // verifyButton() {
   //     return this.state.inSaveButtonDisabled === false
