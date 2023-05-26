@@ -5,7 +5,7 @@ class CheckBox extends React.Component {
     const { checked, onInputChange } = this.props;
     return (
       <label className='trunfoInput'>
-        Super Trunfo
+        Super Trunfo:
         <input
           type='checkbox'
           id='trunfoInput'

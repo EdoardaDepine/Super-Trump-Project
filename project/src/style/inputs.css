@@ -1,0 +1,53 @@
+#allLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: rgb(226, 225, 225);
+  width: 180px;
+}
+
+.descriptionInput {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.textArea {
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: rgb(226, 225, 225);
+  width: 180px;
+  height: 50px;
+}
+
+.trunfoInput {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.rareInput {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.selectInput {
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+  width: 100px;
+}

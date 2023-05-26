@@ -23,8 +23,8 @@ class App extends React.Component {
     if (
       this.state.cardName !== "" &&
       this.state.cardDescription !== "" &&
-      this.state.cardImage !== ""
-      //this.verifyAttributes() === false
+      this.state.cardImage !== "" &&
+      this.verifyAttributes()
     ) {
       return this.setState({ inSaveButtonDisabled: false });
     }
@@ -84,16 +84,21 @@ class App extends React.Component {
     });
   };
 
-  onDeleteCard(event) {
-    event.preventDefault();
-    event.target.parentNode.remove();
-  }
+  onDeleteCard = (event) => {
+    const cardName =
+      event.target.parentNode.childNodes[0].childNodes[0].innerText;
+    const filter = this.state.savedCarts.filter(
+      (card) => card.cardName !== cardName
+    );
+    this.setState({
+      savedCarts: filter,
+    });
+  };
 
   render() {
     return (
-      <div>
-        <header>Adicionar Nova Carta</header>
-        <main>
+      <main className='main'>
+        <div className='formAndPreviousCard'>
           <Form
             onInputChange={this.onInputChange}
             onSaveButtonClick={this.onSaveButtonClick}
@@ -118,26 +123,26 @@ class App extends React.Component {
             cardRare={this.state.cardRare}
             cardTrunfo={this.state.cardTrunfo}
           />
-          <div className='allCards' style={{ display: "flex" }}>
-            {this.state.savedCarts.map((obj, i) => (
-              <div className='card'>
-                <Card
-                  key={`${i}${obj.cardName}`}
-                  cardName={obj.cardName}
-                  cardDescription={obj.cardDescription}
-                  cardAttr1={obj.cardAttr1}
-                  cardAttr2={obj.cardAttr2}
-                  cardAttr3={obj.cardAttr3}
-                  cardImage={obj.cardImage}
-                  cardRare={obj.cardRare}
-                  cardTrunfo={obj.cardTrunfo}
-                />
-                <Button name='Excluir' onSaveButtonClick={this.onDeleteCard} />
-              </div>
-            ))}
-          </div>
-        </main>
-      </div>
+        </div>
+        <div className='allCards' style={{ display: "flex" }}>
+          {this.state.savedCarts.map((obj, i) => (
+            <div className='card'>
+              <Card
+                key={`${i}${obj.cardName}`}
+                cardName={obj.cardName}
+                cardDescription={obj.cardDescription}
+                cardAttr1={obj.cardAttr1}
+                cardAttr2={obj.cardAttr2}
+                cardAttr3={obj.cardAttr3}
+                cardImage={obj.cardImage}
+                cardRare={obj.cardRare}
+                cardTrunfo={obj.cardTrunfo}
+              />
+              <Button name='Excluir' onSaveButtonClick={this.onDeleteCard} />
+            </div>
+          ))}
+        </div>
+      </main>
     );
   }
 }

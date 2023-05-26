@@ -1,0 +1,11 @@
+.saveButton {
+  background-color: rgb(10, 62, 2);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+  color: aliceblue;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-weight: bold;
+}

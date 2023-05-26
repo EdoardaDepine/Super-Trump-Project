@@ -5,6 +5,7 @@ import TextArea from "./textArea";
 import Select from "./select";
 import CheckBox from "./checkbox";
 import Button from "./button";
+import "../style/form.css";
 
 class Form extends React.Component {
   render() {
@@ -24,10 +25,8 @@ class Form extends React.Component {
     } = this.props;
 
     return (
-      <form
-        className='form'
-        style={{ display: "flex", flexDirection: "column", gap: 20 }}
-      >
+      <form className='form'>
+        <h2>ADICIONAR NOVA CARTA:</h2>
         <Input
           className='nameInput'
           labelName='Nome'
@@ -95,6 +94,7 @@ class Form extends React.Component {
           disabled={inSaveButtonDisabled}
           onSaveButtonClick={onSaveButtonClick}
           name='Salvar'
+          classNameButton='saveButton'
         />
       </form>
     );

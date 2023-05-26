@@ -5,8 +5,9 @@ class TextArea extends React.Component {
     const { value, onInputChange } = this.props;
     return (
       <label className='descriptionInput'>
-        Descrição
+        Descrição:
         <textarea
+          className='textArea'
           value={value}
           onChange={onInputChange}
           name='cardDescription'
