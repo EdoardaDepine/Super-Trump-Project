@@ -3,12 +3,11 @@
   flex-direction: column;
   background-color: rgb(181, 193, 178);
   border-radius: 4px;
-  border-color: rgb(10, 62, 2);
+  border-color: rgb(78, 79, 78);
   border-style: solid;
-  border-width: 10px;
-  height: 600px;
-  width: 340px;
-  gap: 3px;
+  border-width: 8px;
+  height: 660px;
+  width: 370px;
   align-items: center;
   align-content: center;
 }
@@ -18,22 +17,44 @@
 .attr1Card,
 .attr2Card,
 .attr3Card {
-  border: none;
-  padding: 17px;
+  padding: 15px;
   border-radius: 7px;
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: 15px;
   background-color: rgb(226, 225, 225);
   width: 200px;
-  height: 30px;
+  height: 15px;
   font-style: bold;
-  font-size: 18px;
+  font-size: 17px;
+  align-items: center;
 }
 
 .imgCard {
   border-radius: 4px;
   border-color: rgba(1, 8, 0, 0.544);
-  border-style: solid;
-  border-width: 90px;
+  border-style: dashed;
+  border-width: 1px;
+}
+
+.rareAndSuperTrunfo {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.rareCard {
+  background-color: yellow;
+  border-radius: 15px;
+  width: 100px;
+  height: 30px;
+  justify-self: center;
+}
+
+.trunfoCard {
+  background-color: rgb(255, 111, 0);
+  border-radius: 15px;
+  width: 100px;
+  height: 30px;
+  justify-self: center;
 }

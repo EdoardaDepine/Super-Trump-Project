@@ -6,7 +6,13 @@
 .formAndPreviousCard {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.cardPreview {
+  background-color: rgb(10, 66, 2);
+  width: 50%;
+  padding-left: 250px;
 }
 
 .titleCardPreview {
@@ -15,6 +21,18 @@
   font-weight: bold;
 }
 
-.cardPreview {
-  background-color: rgb(232, 233, 214);
+.allCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 100px;
+  gap: 40px;
+  background-color: beige;
+}
+
+.ojectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }

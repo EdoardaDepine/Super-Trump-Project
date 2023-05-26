@@ -141,7 +141,11 @@ class App extends React.Component {
                 cardRare={obj.cardRare}
                 cardTrunfo={obj.cardTrunfo}
               />
-              <Button name='Excluir' onSaveButtonClick={this.onDeleteCard} />
+              <Button
+                name='Excluir'
+                onSaveButtonClick={this.onDeleteCard}
+                classNameButton='deleteButton'
+              />
             </div>
           ))}
         </div>

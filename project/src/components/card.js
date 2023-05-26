@@ -19,6 +19,7 @@ class Card extends React.Component {
           {cardName}
         </p>
         <img
+          style={{ width: 209, height: 209 }}
           className='imgCard'
           name='imgCard'
           src={cardImage}
@@ -28,22 +29,24 @@ class Card extends React.Component {
           {cardDescription}
         </p>
         <p className='attr1Card' name='cardAttr1'>
-          {cardAttr1}
+          ATTR: {cardAttr1}
         </p>
         <p className='attr2Card' name='cardAttr2'>
-          {cardAttr2}
+          ATTR: {cardAttr2}
         </p>
         <p className='attr3Card' name='cardAttr3'>
-          {cardAttr3}
+          ATTR: {cardAttr3}
         </p>
-        <p className='rareCard' name='cardRare'>
-          {cardRare}
-        </p>
-        {cardTrunfo && (
-          <p className='trunfoCard' name='cardTrunfo'>
-            Super Trunfo
+        <div className='rareAndSuperTrunfo'>
+          <p className='rareCard' name='cardRare'>
+            {cardRare}
           </p>
-        )}
+          {cardTrunfo && (
+            <p className='trunfoCard' name='cardTrunfo'>
+              Super Trunfo
+            </p>
+          )}
+        </div>
       </div>
     );
   }
