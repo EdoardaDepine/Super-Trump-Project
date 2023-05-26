@@ -113,20 +113,23 @@ class App extends React.Component {
             cardTrunfo={this.state.cardTrunfo}
             savedCarts={this.state.savedCarts}
           />
-          <Card
-            cardName={this.state.cardName}
-            cardDescription={this.state.cardDescription}
-            cardAttr1={this.state.cardAttr1}
-            cardAttr2={this.state.cardAttr2}
-            cardAttr3={this.state.cardAttr3}
-            cardImage={this.state.cardImage}
-            cardRare={this.state.cardRare}
-            cardTrunfo={this.state.cardTrunfo}
-          />
+          <div className='cardPreview'>
+            <h3 className='titleCardPreview'>Preview:</h3>
+            <Card
+              cardName={this.state.cardName}
+              cardDescription={this.state.cardDescription}
+              cardAttr1={this.state.cardAttr1}
+              cardAttr2={this.state.cardAttr2}
+              cardAttr3={this.state.cardAttr3}
+              cardImage={this.state.cardImage}
+              cardRare={this.state.cardRare}
+              cardTrunfo={this.state.cardTrunfo}
+            />
+          </div>
         </div>
         <div className='allCards' style={{ display: "flex" }}>
           {this.state.savedCarts.map((obj, i) => (
-            <div className='card'>
+            <div className='ojectCard'>
               <Card
                 key={`${i}${obj.cardName}`}
                 cardName={obj.cardName}

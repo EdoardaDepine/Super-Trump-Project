@@ -1,11 +1,3 @@
-.header {
-  font-size: x-large;
-  font-style: italic;
-  font-weight: bold;
-  padding-left: 30px;
-  padding-top: 30px;
-}
-
 .main {
   display: flex;
   flex-direction: column;
@@ -15,4 +7,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.titleCardPreview {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.cardPreview {
+  background-color: rgb(232, 233, 214);
 }
